@@ -15,6 +15,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
     AdminLayoutComponent,
     BaseLayoutComponent,
     NavComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductListPageComponent
   ],
   imports: [
     BrowserModule,

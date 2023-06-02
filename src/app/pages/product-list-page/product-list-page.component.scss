@@ -1,0 +1,129 @@
+.list-product-page {
+  width: 100%;
+  height: auto;
+
+  .title {
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .breadcrum {
+    display: flex;
+    background: transparent;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+    font-size: 17px;
+    width: 100%;
+
+
+    ul {
+      display: flex;
+      list-style: none;
+      width: 57.3%;
+      justify-content: flex-start;
+      align-items: stretch;
+
+
+      li {
+        margin-left: 30px;
+        transition: 0.5s;
+
+        a {
+          text-decoration: none;
+          color: #e7e5db;
+        }
+
+        &:hover {
+          color: rgb(246, 190, 158);
+          text-decoration: underline;
+          transition: 0.5s;
+        }
+
+      }
+    }
+
+    .filter {
+      width: 40%;
+
+      label {
+        margin-left: 16rem;
+        letter-spacing: 0.8px;
+        color: white;
+      }
+
+      select {
+        background: transparent;
+        color: #ff6900;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 17px;
+      }
+    }
+  }
+
+  .list-product {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    a {
+      color: white;
+      text-decoration: none;
+      width: 30%;
+
+      .product-child {
+        margin: 30px auto;
+        width: 80%;
+        height: auto;
+        background: #323232;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.2s;
+
+        img {
+          width: 90%;
+          height: auto;
+        }
+
+        div {
+          p {
+            color: white;
+            margin: 30px auto;
+          }
+
+          h3 {
+            color: white;
+            letter-spacing: 0.8px;
+
+            del {
+              color: rgba(156, 156, 156, 0.774);
+              font-size: 15px;
+              margin: 0 5px;
+            }
+
+            span {
+              font-size: 17px;
+              color: red;
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: -2px -2px 5px 0px white, 2px 2px 5px 0px #ff6900;
+          transition: 0.2s;
+
+        }
+      }
+    }
+  }
+}
