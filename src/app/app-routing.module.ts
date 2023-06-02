@@ -10,11 +10,13 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductUpdateComponent } from './pages/product-update/product-update.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
 
 const routes: Routes = [
   {
     path: "", component: BaseLayoutComponent, children: [
       { path: "", component: HomePageComponent },
+      { path: "list-product", component: ProductListPageComponent },
       { path: "about", component: AboutPageComponent },
       { path: "product/:id", component: ProductDetailComponent }
     ]

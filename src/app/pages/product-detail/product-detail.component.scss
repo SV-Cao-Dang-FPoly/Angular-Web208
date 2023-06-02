@@ -1,0 +1,176 @@
+.product-detail {
+  width: 100%;
+  height: auto;
+  display: flex;
+  color: white;
+  background: transparent;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+
+  .display-image {
+    width: 50%;
+    padding: 0 20px;
+
+    img {
+      width: 90%;
+    }
+  }
+
+  .display-detail {
+    width: 50%;
+    padding: 0 20px;
+
+
+    h2 {
+      font-size: 35px;
+    }
+
+    .price-sale {
+      label {
+        letter-spacing: 0.8px;
+        color: white;
+      }
+
+      select {
+        background: transparent;
+        color: #ff6900;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        outline: none;
+        font-size: 17px;
+      }
+    }
+  }
+
+  .display-price {
+    font-size: 25px;
+    font-weight: 700;
+
+    del {
+      font-size: 17px;
+      margin: 0 10px;
+      color: rgba(185, 184, 184, 0.785);
+      font-weight: normal;
+    }
+
+    span {
+      font-size: 20px;
+      color: red;
+    }
+  }
+
+  .btn-buy {
+    width: 100%;
+    height: auto;
+
+    button {
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: white;
+      background: #1f7ad5;
+      outline: none;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .btn-option {
+      display: flex;
+      margin-top: 10px;
+      width: 100%;
+
+      button {
+        width: 50%;
+        font-size: 17px;
+        margin: 0 10px;
+        background: white;
+        color: black;
+
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+.similar-product {
+  width: 100%;
+  height: auto;
+
+
+  .title {
+    margin: 50px auto;
+
+    h3 {
+      width: 100%;
+      height: auto;
+      color: white;
+      text-align: center;
+      font-size: 25px;
+    }
+  }
+
+  .list-product-similar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    a {
+      color: white;
+      text-decoration: none;
+      width: 30%;
+
+      .product-child {
+        margin: 30px auto;
+        width: 80%;
+        height: auto;
+        background: #323232;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.2s;
+
+        img {
+          width: 90%;
+          height: auto;
+        }
+
+        div {
+          p {
+            color: white;
+            margin: 30px auto;
+          }
+
+          h3 {
+            color: white;
+            letter-spacing: 0.8px;
+
+            del {
+              color: rgba(156, 156, 156, 0.774);
+              font-size: 15px;
+              margin: 0 5px;
+            }
+
+            span {
+              font-size: 17px;
+              color: red;
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: -2px -2px 5px 0px white, 2px 2px 5px 0px #ff6900;
+          transition: 0.2s;
+
+        }
+      }
+    }
+  }
+
+}
