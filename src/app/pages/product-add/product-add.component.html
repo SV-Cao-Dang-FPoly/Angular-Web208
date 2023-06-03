@@ -1,7 +1,14 @@
 <form (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+  <label for="">tên</label>
   <input type="text" formControlName="name">
+
+  <label for="">giá</label>
   <input type="number" formControlName="price">
+
+  <label for="">link ảnh</label>
   <input type="text" formControlName="img">
+
+  <label for="">mổ tả</label>
   <input type="text" formControlName="description">
 
   <button type="submit" [disabled]="!productForm.valid">Thêm</button>

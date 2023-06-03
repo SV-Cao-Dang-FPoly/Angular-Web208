@@ -26,7 +26,7 @@ export class ProductService {
     return this.http.post<IProduct>(`http://localhost:3000/products`, product)
   }
 
-  // updateProduct(id: number): Observable<IProduct> {
-  //   return this.http.patch<IProduct>(`http://localhost:3000/products/${product.id}`, product)
-  // }
+  updateProduct(product: IProduct): Observable<IProduct> {
+    return this.http.patch<IProduct>(`http://localhost:3000/products/${product.id}`, product);
+  }
 }

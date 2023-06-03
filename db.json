@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "name": "abc update",
+      "price": 9999,
+      "img": "https://picsum.photos/200/200",
+      "description": "ádfads update",
+      "id": 1
+    }
+  ]
+}
