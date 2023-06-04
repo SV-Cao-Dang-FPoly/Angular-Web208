@@ -16,6 +16,7 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { NavComponent } from './components/nav/nav.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
+import { CustomerInformationComponentComponent } from './components/customer-information-component/customer-information-component.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProductListPageComponent } from './pages/product-list-page/product-list
     BaseLayoutComponent,
     NavComponent,
     ProductListComponent,
-    ProductListPageComponent
+    ProductListPageComponent,
+    CustomerInformationComponentComponent
   ],
   imports: [
     BrowserModule,
