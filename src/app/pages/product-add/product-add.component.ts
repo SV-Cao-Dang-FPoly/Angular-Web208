@@ -9,6 +9,7 @@ import { IProduct } from 'src/app/interfaces/Product';
   styleUrls: ['./product-add.component.scss']
 })
 export class ProductAddComponent {
+<<<<<<< HEAD
   productForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     price: [0],
@@ -33,4 +34,7 @@ export class ProductAddComponent {
       })
     }
   }
+=======
+  
+>>>>>>> 073b5d968cad4c90c2a92039f8178d74cbf7b0de
 }

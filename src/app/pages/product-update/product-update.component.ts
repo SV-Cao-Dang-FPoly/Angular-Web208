@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { IProduct } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-update',
@@ -21,7 +22,8 @@ export class ProductUpdateComponent {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.route.paramMap.subscribe(param => {
       const id = Number(param.get('id'));
@@ -48,6 +50,7 @@ export class ProductUpdateComponent {
       }
       this.productService.updateProduct(newProduct).subscribe(product => {
         console.log(product);
+        this.router.navigate(['admin/product']);
       })
     }
   }

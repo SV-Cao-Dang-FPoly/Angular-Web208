@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
   <label for="">tên</label>
   <input type="text" formControlName="name">
@@ -15,3 +16,23 @@
 
   {{productForm.value | json}}
 </form>
+=======
+
+<section class="bg">
+    <form>
+		<h2>Thêm Sản Phẩm Mới</h2>
+		<label for="name">Tên Sản Phẩm:</label>
+		<input type="text" id="name" name="name" required>
+		<label for="description">Mô Tả:</label>
+		<textarea id="description" name="description"></textarea>
+		<label for="price">Giá bán:</label>
+		<input type="number" id="price" name="price" required>
+		<label for="image">Hình Ảnh:</label>
+		<input type="file" id="image" name="image" accept="image/*">
+    <label for="price">số lượng</label>
+		<input type="number" id="price" name="price" required>
+		<button  type="submit">Thêm Sản Phẩm</button>
+
+	</form>
+</section>
+>>>>>>> 073b5d968cad4c90c2a92039f8178d74cbf7b0de
