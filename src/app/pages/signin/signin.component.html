@@ -1,0 +1,27 @@
+<form [formGroup]="formSignin" (ngSubmit)="onHandleSubmit()">
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email">
+
+        <div
+            *ngIf="formSignin.get('email')?.hasError('required') && (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)">
+            Email is required
+        </div>
+        <div
+            *ngIf="formSignin.get('email')?.hasError('email') && (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)">
+            Invalid email format
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+
+        <div
+            *ngIf="formSignin.get('password')?.hasError('required') && (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)">
+            Password is required
+        </div>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
