@@ -11,7 +11,12 @@ import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductUpdateComponent } from './pages/product-update/product-update.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
+<<<<<<< HEAD
 
+=======
+import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
+>>>>>>> 110e042ab830f96e906438e382db3cea6244b4e5
 
 const routes: Routes = [
     {
@@ -32,6 +37,15 @@ const routes: Routes = [
         ]
     },
     {
+<<<<<<< HEAD
+=======
+        path: "signup", component: SignupComponent, children: []
+    },
+    {
+        path: "signin", component: SigninComponent, children: []
+    },
+    {
+>>>>>>> 110e042ab830f96e906438e382db3cea6244b4e5
         path: "**", component: PageNotFoundComponent
     }
 ];
