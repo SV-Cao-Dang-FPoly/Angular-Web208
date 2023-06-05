@@ -11,6 +11,7 @@ import { ProductAddComponent } from './pages/product-add/product-add.component';
 import { ProductUpdateComponent } from './pages/product-update/product-update.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
+import { CustomerInformationComponentComponent } from './components/customer-information-component/customer-information-component.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
       { path: "product", component: ProductListComponent },
       { path: "product/add", component: ProductAddComponent },
       { path: "product/:id/update", component: ProductUpdateComponent },
-
+      { path: "khachhang", component: CustomerInformationComponentComponent },
     ]
   },
   {
