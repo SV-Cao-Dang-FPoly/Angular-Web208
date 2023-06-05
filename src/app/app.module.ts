@@ -18,7 +18,9 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { NavComponent } from './components/nav/nav.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
-import { CustomerInformationComponentComponent } from './components/customer-information-component/customer-information-component.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { CustomerInformationComponentComponent } from './components/customer-inf
         NavComponent,
         ProductListComponent,
         ProductListPageComponent,
-        CustomerInformationComponentComponent
+        SigninComponent,
+        SignupComponent
     ],
     imports: [
         BrowserModule,
