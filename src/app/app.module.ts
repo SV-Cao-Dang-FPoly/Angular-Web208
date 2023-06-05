@@ -18,34 +18,32 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { NavComponent } from './components/nav/nav.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
-import { CustomerInformationComponentComponent } from './components/customer-information-component/customer-information-component.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AdminProductComponent,
-    DashboardComponent,
-    AboutPageComponent,
-    HomePageComponent,
-    PageNotFoundComponent,
-    ProductAddComponent,
-    ProductUpdateComponent,
-    ProductDetailComponent,
-    AdminLayoutComponent,
-    BaseLayoutComponent,
-    NavComponent,
-    ProductListComponent,
-    ProductListPageComponent,
-    CustomerInformationComponentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AdminProductComponent,
+        DashboardComponent,
+        AboutPageComponent,
+        HomePageComponent,
+        PageNotFoundComponent,
+        ProductAddComponent,
+        ProductUpdateComponent,
+        ProductDetailComponent,
+        AdminLayoutComponent,
+        BaseLayoutComponent,
+        NavComponent,
+        ProductListComponent,
+        ProductListPageComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
