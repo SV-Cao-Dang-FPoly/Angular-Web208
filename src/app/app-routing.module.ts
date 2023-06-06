@@ -14,6 +14,8 @@ import { ProductListPageComponent } from './pages/product-list-page/product-list
 
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { ProductCartComponent } from './pages/product-cart/product-cart.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
 
 const routes: Routes = [
     {
@@ -21,6 +23,8 @@ const routes: Routes = [
             { path: "", component: HomePageComponent },
             { path: "list-product", component: ProductListPageComponent },
             { path: "about", component: AboutPageComponent },
+            { path: "cart", component: ProductCartComponent },
+            { path: "shipping", component: ShippingComponent },
             { path: "product/:id", component: ProductDetailComponent }
         ]
     },
