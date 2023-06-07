@@ -1,0 +1,71 @@
+form {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    color:rgb(247, 241, 241);
+  }
+  
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  legend {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 10px;
+  }
+  input{
+    border-radius: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #36a09e;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 25px;
+    transition: background-color 0.25s;
+  }
+
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #257f7b;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  span.required {
+    color: #f00;
+    margin-right: 5px;
+  }
+  
+  .banking{
+    display: flex;
+   
+  }

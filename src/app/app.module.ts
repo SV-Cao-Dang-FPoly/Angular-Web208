@@ -20,6 +20,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ProductCartComponent } from './pages/product-cart/product-cart.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
 
 
 
@@ -40,7 +42,9 @@ import { SignupComponent } from './pages/signup/signup.component';
         ProductListComponent,
         ProductListPageComponent,
         SigninComponent,
-        SignupComponent
+        SignupComponent,
+        ProductCartComponent,
+        ShippingComponent
     ],
     imports: [
         BrowserModule,

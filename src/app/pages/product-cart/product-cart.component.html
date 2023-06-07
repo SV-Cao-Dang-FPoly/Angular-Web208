@@ -1,0 +1,53 @@
+<div class="container ">
+    
+
+    <h1>Giỏ hàng</h1>
+        <div class="list-products">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Ảnh đại diện</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>Thành tiền</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let item of cartItems; index as i">
+                            <td>{{ i + 1}}</td>
+                            <td>
+                                <img src={{item.img}} alt="">
+                            </td>
+                            <td>{{ item.name }}</td>
+                            <td>
+                                <input type="number" [(ngModel)]="item.quantity" (ngModelChange)="totalItem(item)"  min="1" max="20" step="1">
+                            </td>
+                            <td>{{ item.price }}  VNĐ</td>
+                            <td>{{item.quantity * +item.price }} VNĐ</td>
+                            <td>
+                               <div class="active">
+                                  
+                                    <button class="bg-red" >Xóa</button>
+                               </div>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                    <tfoot>
+                        <tr >
+                            <th  colspan="5">Tổng tiền</th>
+                            <th colspan="2">{{ total }} VNĐ</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+            </div>
+            <a routerLink="{shipping}"> <button class="buy">Thanh toán</button></a>
+           
+        </div>
+</div>
+
