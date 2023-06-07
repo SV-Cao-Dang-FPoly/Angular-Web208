@@ -14,6 +14,8 @@ import { ProductListPageComponent } from './pages/product-list-page/product-list
 
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { CustomerInformationComponent } from './components/custommer/customer-information/customer-information.component';
+import { CustomerUpdateComponent } from './components/custommer/customer-update/customer-update.component';
 
 const routes: Routes = [
     {
@@ -31,6 +33,7 @@ const routes: Routes = [
             { path: "product", component: ProductListComponent },
             { path: "product/add", component: ProductAddComponent },
             { path: "product/:id/update", component: ProductUpdateComponent },
+            { path: "customer", component: CustomerInformationComponent },
         ]
     },
     {

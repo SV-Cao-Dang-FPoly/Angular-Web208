@@ -1,11 +1,18 @@
 {
   "products": [
     {
-      "name": "abc update 12",
+      "name": "abc update 13",
       "price": 9999,
       "img": "https://picsum.photos/200/200",
       "description": "mo ta update",
       "id": 1
+    },
+    {
+      "name": "Product A",
+      "price": 200,
+      "img": "https://cdn2.cellphones.com.vn/358x358,webp,q100/media/catalog/product/i/p/iphone-14-storage-select-202209-6-1inch-y889.jpg",
+      "description": "ihpne 14",
+      "id": 2
     }
   ]
 }

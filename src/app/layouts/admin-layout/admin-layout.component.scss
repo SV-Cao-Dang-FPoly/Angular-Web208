@@ -1,0 +1,180 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    width: auto;
+    top: 0;
+    right: 0;
+
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-right: 20px;
+            display: flex;
+
+            a {
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+                text-decoration: none;
+                font-weight: bold;
+                border-bottom: 2px solid transparent;
+                transition: border-bottom-color 0.2s ease-in-out;
+
+                &:hover {
+                    border-bottom-color: #448ef7;
+                }
+
+                &.active {
+                    border-bottom-color: #fff;
+                }
+            }
+        }
+    }
+
+    .right a {
+        color: #424242;
+        text-decoration: none;
+        font-weight: bold;
+        border: 2px solid #424242;
+        padding: 6px 12px;
+        border-radius: 20px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: #448ef7;
+            background-color: white;
+        }
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #353a3e;
+    width: 20%;
+    position: relative;
+    height: 1000px;
+    padding: 20px;
+
+    .menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .menu-item {
+            margin-bottom: 10px;
+
+            a {
+                color: white;
+                display: block;
+                font-weight: bold;
+                padding: 10px;
+                text-decoration: none;
+                transition: all 0.2s;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #448ef7;
+                }
+            }
+
+            &.dropdown {
+                .submenu {
+                    display: none;
+                    background-color: #fff;
+                    margin: 0;
+                    padding: 0;
+
+                    .submenu-item {
+                        margin: 0;
+
+                        a {
+                            color: #333;
+                            display: block;
+                            font-weight: normal;
+                            padding: 10px;
+                            text-decoration: none;
+                            transition: all 0.2s;
+
+                            &:hover {
+                                color: #fff;
+                                background-color: #448ef7;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .submenu {
+                        display: block;
+                    }
+
+                    >a {
+                        color: #fff;
+                        background-color: #424242;
+                    }
+                }
+
+                >a {
+                    color: white;
+                    font-weight: bold;
+                    border-bottom: 2px solid transparent;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        border-bottom-color: #333;
+                    }
+
+                    &.active {
+                        border-bottom-color: #333;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container {
+    padding-left: 25%;
+    position: absolute;
+    width: 72%;
+}
+
+main {
+    padding-top: 20px;
+}
+
+.menu-item a {
+    display: inline-block;
+    vertical-align: middle;
+    color: white;
+}
+
+.menu-item i {
+    display: inline-block;
+    font-size: 1.2em;
+   
+    margin-left: 5px;
+    
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.fa-solid {
+    color: white;
+}
+h1{
+    color: white;
+}
