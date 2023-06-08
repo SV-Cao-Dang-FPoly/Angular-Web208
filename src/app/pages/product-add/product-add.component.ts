@@ -22,17 +22,17 @@ export class ProductAddComponent {
         private formBuilder: FormBuilder) { }
 
     onHandleSubmit() {
-        if (this.productForm.valid) {
-            const product: IProduct = {
-                name: this.productForm.value.name || "",
-                price: this.productForm.value.price || 0,
-                img: this.productForm.value.img || "",
-                description: this.productForm.value.description || "",
-            }
-            this.productService.addProduct(product).subscribe(product => {
-                console.log('Thành công', product)
-            })
+        if (this.productForm.invalid) return;
+        const product: IProduct = {
+            name: this.productForm.value.name || "",
+            price: this.productForm.value.price || 0,
+            img: this.productForm.value.img || "",
+            description: this.productForm.value.description || "",
         }
+        this.productService.addProduct(product).subscribe(product => {
+            console.log('Thành công', product)
+        })
+
     }
 
 }
