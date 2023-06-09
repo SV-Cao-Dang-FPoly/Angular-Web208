@@ -72,16 +72,16 @@
     <h2>iPhone</h2>
   </div>
 
-  <div class="list-product">
-    <a href="">
+  <div class="list-product" >
+    <a href="" *ngFor="let product of products; index as i">
       <div class="product-child">
         <img
-          src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_300x300/https://cdn.tgdd.vn/Products/Images/42/251192/s16/iphone-14-pro-max-128gb-black-thumb-650x650.png"
+         [src]="product.img"
           alt="">
 
         <div>
-          <p>iPhone 14 Pro Max 128GB</p>
-          <h3>26.490.000đ
+          <p>{{ product.name }}</p>
+          <h3>{{ product.price }}
             <del>28.990.00đ</del>
             <span>-3%</span>
           </h3>
@@ -90,7 +90,7 @@
     </a>
 
 
-    <a href="">
+    <!-- <a href="">
       <div class="product-child">
         <img
           src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_300x300/https://cdn.tgdd.vn/Products/Images/42/289700/s16/iphone-14-pro-max-black-thumbnew-650x650.png"
@@ -136,10 +136,10 @@
           </h3>
         </div>
       </div>
-    </a>
+    </a> -->
 
 
-  </div>
+  <!-- </div>
 </div>
 
 <div class="product">
@@ -297,5 +297,5 @@
     </a>
 
 
-  </div>
+  </div> -->
 </div>

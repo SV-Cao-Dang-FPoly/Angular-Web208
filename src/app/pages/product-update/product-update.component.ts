@@ -16,41 +16,44 @@ export class ProductUpdateComponent {
     name: ['', [Validators.required, Validators.minLength(2)]],
     price: [0],
     img: ['', [Validators.required]],
-    description: [''],
+    description: ['', [Validators.required]],
   })
 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private router: Router
-  ) {
+    private router: Router) {
+      
     this.route.paramMap.subscribe(param => {
-      const id = Number(param.get('id'));
+      const id = this.route.snapshot.params['id'];
       this.productService.getProductById(id).subscribe(product => {
         this.product = product;
+        // set giá trị từ API vào input form
         this.productForm.patchValue({
-          name: product.name,
-          price: product.price,
-          img: product.img,
-          description: product.description,
+          name:this.product.name,
+          price: this.product.price,
+          img : this.product.img,
+          description : this.product.description,
         })
-      },
-        error => console.log(error.message))
+      }, error => console.log(error.message))
     })
   }
   onHandleUpdate() {
+    // kiểm tra nếu form hợp lệ 
     if (this.productForm.valid) {
       const newProduct: IProduct = {
-        id: this.product.id,
+        _id: this.product._id,
         name: this.productForm.value.name || "",
-        price: this.productForm.value.price || 0,
         img: this.productForm.value.img || "",
+        price: this.productForm.value.price || 0,
         description: this.productForm.value.description || "",
       }
+      console.log(newProduct);
+      
       this.productService.updateProduct(newProduct).subscribe(product => {
-        console.log(product);
-        this.router.navigate(['admin/product']);
+        alert("Cập nhật sản phẩm thành công")
+        this.router.navigate(['/admin/product']);
       })
     }
   }

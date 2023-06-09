@@ -11,26 +11,50 @@
                     <button><a routerLink="add">thêm sản phẩm</a></button>
 
                 </th>
+                <th>
+                    <div>
+                        <input type="text" [(ngModel)]="searchTerm" placeholder="Tìm kiếm sản phẩm" />
+                        <span *ngIf="searchProducts().length === 0">Không có kết quả</span>
+                      </div>
+
+                </th>
             </tr>
         </thead>
 
-        <tbody>
-            <tr *ngFor="let product of products; index as i">
-                <td>{{i+1}}</td>
+        <ng-container *ngIf="searchProducts().length === 0">
+            <tbody>
+                <tr *ngFor="let product of products; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>
+                        <img [src]="product.img" />
+                    </td>
+                    <td>{{product.description}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="removeItem(product._id)!">Xóa</button>
+                        <button class="btn btn-danger" routerLink="{{ product._id }}/update">Sửa</button>
+                    </td>
+                </tr>
+            </tbody>
+          </ng-container>
+
+          <ng-container *ngIf="searchProducts().length > 0">
+            <tbody>
+              <tr *ngFor="let product of searchProducts(); index as i">
+                <td>{{i + 1}}</td>
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
-                <td>
-                    <img [src]="product.img" />
-                </td>
+                <td><img [src]="product.img" /></td>
                 <td>{{product.description}}</td>
                 <td>
-                    <button class="btn btn-danger" (click)="removeItem(product.id)">Xóa</button>
-                    <button class="btn btn-danger ">
-                        <a style="color: rgb(255, 0, 0); text-decoration: none; display:block;"
-                            routerLink="{{product.id}}/update">Sửa</a>
-                    </button>
+                  <button class="btn btn-danger" (click)="removeItem(product._id)!">Xóa</button>
+                  <button class="btn btn-danger" routerLink="{{ product._id }}/update">Sửa</button>
                 </td>
-            </tr>
-        </tbody>
+              </tr>
+            </tbody>
+          </ng-container>
+
+       
     </table>
 </div>
