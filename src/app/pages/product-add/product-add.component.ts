@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { IProduct } from 'src/app/interfaces/Product';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-product-add',
@@ -14,24 +15,28 @@ export class ProductAddComponent {
         name: ['', [Validators.required, Validators.minLength(2)]],
         price: [0],
         img: ['', [Validators.required]],
-        description: [''],
+        description: ['', [Validators.required]],
     })
 
     constructor(
         private productService: ProductService,
+        private router: Router,
         private formBuilder: FormBuilder) { }
 
-    onHandleSubmit() {
-        if (this.productForm.invalid) return;
-        const product: IProduct = {
-            name: this.productForm.value.name || "",
-            price: this.productForm.value.price || 0,
-            img: this.productForm.value.img || "",
-            description: this.productForm.value.description || "",
+    onHandleAdd() {
+        if (this.productForm.valid){
+            const product: IProduct = {
+                name: this.productForm.value.name || "",
+                price: this.productForm.value.price || 0,
+                img: this.productForm.value.img || "",
+                description: this.productForm.value.description || "",
+            }
+            this.productService.addProduct(product).subscribe(product => {
+                console.log('Thành công', product);
+                this.router.navigate(['/admin/product']);
+            })
         }
-        this.productService.addProduct(product).subscribe(product => {
-            console.log('Thành công', product)
-        })
+        
 
     }
 

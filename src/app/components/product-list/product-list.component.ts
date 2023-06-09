@@ -9,21 +9,42 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent {
   products: IProduct[] = [];
+  searchTerm: string = '';
+  removedProducts: IProduct[] = [];
 
   constructor(
     private productService: ProductService
   ) {
-    this.productService.getProducts().subscribe(data => {
-      this.products = data;
-    }, error => {
-      console.log(error.message);
-    })
+    this.fetchProducts();
   }
 
-  removeItem(id: any) {
-    this.productService.deleteProduct(id).subscribe(() => {
-      console.log("Xóa thành công");
-    })
+  fetchProducts() {
+    this.productService.getProducts().subscribe(data => {
+      this.products =  data.reverse();
+    }, error => {
+      console.log(error.message);
+    });
+  }
+
+  removeItem(_id: any) {
+    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
+      this.productService.deleteProduct(_id).subscribe(() => {
+        console.log("Xóa thành công");
+        const removedProduct = this.products.find(product => product._id === _id);
+        if (removedProduct) {
+          this.removedProducts.push(removedProduct);
+          this.products = this.products.filter(product => product._id !== _id);
+        }
+      });
+      
+    }
+  }
+
+  searchProducts() {
+    const filteredProducts = this.products.filter(product => {
+      return product.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+    });
+    return filteredProducts;
   }
 
 }

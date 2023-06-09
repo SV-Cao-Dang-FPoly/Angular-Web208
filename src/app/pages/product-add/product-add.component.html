@@ -1,4 +1,4 @@
-<form (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+<form (ngSubmit)="onHandleAdd()" [formGroup]="productForm">
     <label for="">tên</label>
     <input type="text" formControlName="name">
 
@@ -11,7 +11,7 @@
     <label for="">mổ tả</label>
     <input type="text" formControlName="description">
 
-    <button type="submit" [disabled]="!productForm.valid">Thêm</button>
+    <button type="submit" >Thêm</button>
 
     {{productForm.value | json}}
 </form>
