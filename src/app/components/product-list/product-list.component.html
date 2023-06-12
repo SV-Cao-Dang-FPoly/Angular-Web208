@@ -1,33 +1,23 @@
 <div class="search-wrapper">
-    <label for="search-field">Tìm kiếm sản phẩm:</label>
+    <h2>Danh sách sản phẩm</h2>
     <div class="input-group">
-      <input type="text" id="search-field" placeholder="Nhập thông tin ở đây...">
-      <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <div>
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Tìm kiếm sản phẩm" />
+            <span *ngIf="searchProducts().length === 0">Không có kết quả</span>
+        </div>
     </div>
-  </div>
-  
-  
-<a class="add-product" href="admin/product/add">thêm sản phẩm</a>
+</div>
+
 <div class="container">
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>STT</th>
                 <th>Tên</th>
+                <th>Danh mục</th>
                 <th>Giá</th>
                 <th>Ảnh</th>
                 <th>Mô tả</th>
-                <th>
-                    <button><a routerLink="add">thêm sản phẩm</a></button>
-
-                </th>
-                <th>
-                    <div>
-                        <input type="text" [(ngModel)]="searchTerm" placeholder="Tìm kiếm sản phẩm" />
-                        <span *ngIf="searchProducts().length === 0">Không có kết quả</span>
-                      </div>
-
-                </th>
                 <th>Sửa/Xóa</th>
             </tr>
         </thead>
@@ -37,9 +27,15 @@
                 <tr *ngFor="let product of products; index as i">
                     <td>{{i+1}}</td>
                     <td>{{product.name}}</td>
+                    <td>
+                        <ng-container *ngFor="let category of categories">
+                            <span *ngIf="category._id === product.categoryId">{{ category.name }}</span>
+                        </ng-container>
+                    </td>
+
                     <td>{{product.price}}</td>
                     <td>
-                        <img [src]="product.img" />
+                        <img [src]="product.img" style="width: 100px; height: 100px;" />
                     </td>
                     <td>{{product.description}}</td>
                     <td>
@@ -48,25 +44,75 @@
                     </td>
                 </tr>
             </tbody>
-          </ng-container>
+        </ng-container>
 
-          <ng-container *ngIf="searchProducts().length > 0">
+        <ng-container *ngIf="searchProducts().length > 0">
             <tbody>
-              <tr *ngFor="let product of searchProducts(); index as i">
-                <td>{{i + 1}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td><img [src]="product.img" /></td>
-                <td>{{product.description}}</td>
-                <td>
-                  <button class="delete-button " (click)="removeItem(product._id)!">Xóa</button>
-                  <button class="edit-button" routerLink="{{ product._id }}/update">Sửa</button>
-                    
-                </td>
-              </tr>
-            </tbody>
-          </ng-container>
+                <tr *ngFor="let product of searchProducts(); index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>
+                        <ng-container *ngFor="let category of categories">
+                            <span *ngIf="category._id === product.categoryId">{{ category.name }}</span>
+                        </ng-container>
+                    </td>
+                    <td><img [src]="product.img" /></td>
+                    <td>{{product.description}}</td>
+                    <td>
+                        <button class="delete-button " (click)="removeItem(product._id)!">Xóa</button>
+                        <button class="edit-button" routerLink="{{ product._id }}/update">Sửa</button>
 
-       
+                    </td>
+                </tr>
+            </tbody>
+        </ng-container>
     </table>
 </div>
+
+
+<!--
+
+<div class="search-wrapper">
+    <h2>Danh sách sản phẩm</h2>
+    <div class="input-group">
+        <div>
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Tìm kiếm sản phẩm" />
+            <span *ngIf="searchProducts().length === 0">Không có kết quả</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Danh mục</th>
+                <th>Giá</th>
+                <th>Ảnh</th>
+                <th>Mô tả</th>
+                <th>Sửa/Xóa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ product.name }}</td>
+                <td>
+                    <ng-container *ngFor="let category of categories">
+                        <span *ngIf="category._id === product.categoryId">{{ category.name }}</span>
+                    </ng-container>
+                </td>
+                <td>{{ product.price }}</td>
+                <td><img [src]="product.img" style="width: 100px; height: 100px;" /></td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="removeItem(product._id)!">Xóa</button>
+                    <button class="btn btn-danger" [routerLink]="[product._id, 'update']">Sửa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->

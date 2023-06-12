@@ -1,115 +1,119 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
+
 table {
-	border-collapse: collapse;
-	width: 100%;
+    border-collapse: collapse;
+    width: 100%;
 
-	th, td {
-		padding: 10px;
-		text-align: center;
-	}
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+    }
 
-	th {
-		background-color: #ddd;
-	}
+    th {
+        background-color: #ddd;
+    }
 
-	td {
-		border: 1px solid #ddd;
-	}
+    td {
+        border: 1px solid #ddd;
+    }
 
-	img {
-		max-width: 100%;
-		height: auto;
-	}
+    img {
+        max-width: 100%;
+        width: 100px;
+        height: 100px;
+    }
 
-	.edit-button {
-		background-color: #4CAF50;
-		color: #fff;
-		padding: 5px 10px;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-		margin-right: 5px;
-	}
+    .edit-button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
 
-	.delete-button {
-		background-color: #f44336;
-		color: #fff;
-		padding: 5px 10px;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
+    .delete-button {
+        background-color: #f44336;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
         text-decoration: none;
-	}
+    }
 }
+
 .add-product {
-	background-color: #3875f6;
-	border: none;
-	color: white;
-	padding: 10px 15px;
-	border-radius: 10px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 14px;
-	margin: 10px 3px;
-	cursor: pointer;
-	font-family :Arial, Helvetica, sans-serif;
+    background-color: #3875f6;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.add-product:hover  {
-	background-color: #7da5f9;
+
+.add-product:hover {
+    background-color: #c15cfb;
 }
-.delete-button a{
+
+.delete-button a {
     text-decoration: none;
     color: white;
 }
+
 .search-wrapper {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-  
+
     label {
-      margin-bottom: 5px;
-      font-weight: bold;
-      font-size: 16px;
-      color: #333;
-    }
-  
-    .input-group {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-  
-      input {
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: #f2f2f2;
-        width: 100%;
-        font-size: 16px;
-  
-        &:focus {
-          outline: none;
-          box-shadow: inset 0 0 5px #666;
-          background-color: #fff;
-        }
-      }
-  
-      button {
-        position: absolute;
-        right: 10px;
-        padding: 10px;
-        border: none;
-        background-color: #f2f2f2;
+        margin-bottom: 5px;
+        font-weight: bold;
         font-size: 16px;
         color: #333;
-        cursor: pointer;
-  
-        &:hover {
-          background-color: #ddd;
-        }
-      }
     }
-  }
-  
-	
+
+    .input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f2f2f2;
+            width: 100%;
+            font-size: 16px;
+
+            &:focus {
+                outline: none;
+                box-shadow: inset 0 0 5px #666;
+                background-color: #fff;
+            }
+        }
+
+        button {
+            position: absolute;
+            right: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #f2f2f2;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+}
