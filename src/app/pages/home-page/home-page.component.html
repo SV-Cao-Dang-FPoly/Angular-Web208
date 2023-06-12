@@ -1,16 +1,14 @@
 <div class="list-categories">
-  <a href="">
-    <div class="cate-product">
-      <img
-        src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/topzone/images/desktop/img-cateiphone-1.png"
-        alt="">
-      <div>
-        <h3>iPhone</h3>
-      </div>
-    </div>
-  </a>
+    <a href="" *ngFor="let category of categories">
+        <div class="cate-product">
+            <img [src]="category.img" alt="">
+            <div>
+                <h3>{{ category.name }}</h3>
+            </div>
+        </div>
+    </a>
 
-  <a href="">
+    <!-- <a href="">
     <div class="cate-product">
       <img
         src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/topzone/images/desktop/img-catemac-1.png"
@@ -63,34 +61,32 @@
         <h3>Phụ kiện</h3>
       </div>
     </div>
-  </a>
+  </a> -->
 
 </div>
 
 <div class="product">
-  <div class="title">
-    <h2>iPhone</h2>
-  </div>
+    <div class="title">
+        <h2>iPhone</h2>
+    </div>
 
-  <div class="list-product" >
-    <a href="" *ngFor="let product of products; index as i">
-      <div class="product-child">
-        <img
-         [src]="product.img"
-          alt="">
+    <div class="list-product">
+        <a href="" *ngFor="let product of products; index as i">
+            <div class="product-child">
+                <img [src]="product.img" alt="">
 
-        <div>
-          <p>{{ product.name }}</p>
-          <h3>{{ product.price }}
-            <del>28.990.00đ</del>
-            <span>-3%</span>
-          </h3>
-        </div>
-      </div>
-    </a>
+                <div>
+                    <p>{{ product.name }}</p>
+                    <h3>{{ product.price }}
+                        <del>28.990.00đ</del>
+                        <span>-3%</span>
+                    </h3>
+                </div>
+            </div>
+        </a>
 
 
-    <!-- <a href="">
+        <!-- <a href="">
       <div class="product-child">
         <img
           src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100,s_300x300/https://cdn.tgdd.vn/Products/Images/42/289700/s16/iphone-14-pro-max-black-thumbnew-650x650.png"
@@ -139,7 +135,7 @@
     </a> -->
 
 
-  <!-- </div>
+        <!-- </div>
 </div>
 
 <div class="product">
@@ -298,4 +294,4 @@
 
 
   </div> -->
-</div>
+    </div>

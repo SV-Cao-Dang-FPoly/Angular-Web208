@@ -1,3 +1,4 @@
+<h2>Thêm danh mục</h2>
 <form (ngSubmit)="onHandleAdd()" [formGroup]="categoryForm">
     <label for="">tên</label>
     <input type="text" formControlName="name">
@@ -5,7 +6,7 @@
     <label for="">Ảnh</label>
     <input type="text" formControlName="img">
 
-    <button type="submit" >Thêm</button>
+    <button type="submit">Thêm</button>
 
     {{categoryForm.value | json}}
 </form>

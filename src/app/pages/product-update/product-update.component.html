@@ -1,24 +1,26 @@
 <h1>Cập nhật sản phẩm</h1>
 <form (ngSubmit)="onHandleUpdate()" [formGroup]="productForm">
-  <h2>Sửa sản phẩm</h2>
-  <div class="mp-3">
-    <label for="name">Tên Sản Phẩm:</label>
-    <input type="text" placeholder="Tenn" formControlName="name" class="form-control">
-    <label for="price">Giá bán:</label>
-    <input type="number" placeholder="gia" formControlName="price" class="form-control">
-    <label for="price">Link ảnh</label>
-    <input type="text" placeholder="link anh" formControlName="img" class="form-control">
-    <label for="price">mô tả</label>
-    <select formControlName="category">
-      <option *ngFor="let category of categories"   [value]="category._id">{{category.name}}</option>
-     
-      
-    </select>
+    <h2>Sửa sản phẩm</h2>
+    <div class="mp-3">
+        <label for="name">Tên Sản Phẩm:</label>
+        <input type="text" placeholder="Tenn" formControlName="name" class="form-control">
+        <label for="price">Giá bán:</label>
+        <input type="number" placeholder="gia" formControlName="price" class="form-control">
+        <label for="price">Link ảnh</label>
+        <input type="text" placeholder="link anh" formControlName="img" class="form-control">
+        <label for="price">mô tả</label>
+        <input type="text" placeholder="mo ta" formControlName="description" class="form-control">
+        <!-- <label for="">Danh mục</label>
+        <select aria-label="Default select example" formControlName="category">
 
-    <input type="text" placeholder="mo ta" formControlName="description" class="form-control">
+            <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
+        </select> -->
 
-  </div>
+        <label for="category">Danh mục</label>
+        <select id="category" formControlName="category">
+            <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+        </select>
+    </div>
 
-  <button type="submit" class="btn btn-primary bg-block btn-lg">Cập nhật sản phẩm</button>
+    <button type="submit" class="btn btn-primary bg-block btn-lg">Cập nhật sản phẩm</button>
 </form>
-  

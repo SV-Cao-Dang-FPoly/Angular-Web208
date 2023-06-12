@@ -26,19 +26,19 @@ export class ProductAddComponent {
         private productService: ProductService,
         private categoryService: CategoryService,
         private router: Router,
-        private formBuilder: FormBuilder) { 
-            this.categoryService.getCategorys().subscribe(
-                (data) => {
-                  this.categories = data;
-                },
-                (error) => {
-                  console.log(error.message);
-                }
-              );
-        }
+        private formBuilder: FormBuilder) {
+        this.categoryService.getCategories().subscribe(
+            (data) => {
+                this.categories = data;
+            },
+            (error) => {
+                console.log(error.message);
+            }
+        );
+    }
 
     onHandleAdd() {
-        if (this.productForm.valid){
+        if (this.productForm.valid) {
             const product: IProduct = {
                 name: this.productForm.value.name || "",
                 price: this.productForm.value.price || 0,
@@ -51,7 +51,7 @@ export class ProductAddComponent {
                 this.router.navigate(['/admin/product']);
             })
         }
-        
+
 
     }
 
