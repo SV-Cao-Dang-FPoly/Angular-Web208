@@ -28,6 +28,10 @@ import { CustomerInformationComponent } from './components/custommer/customer-in
 import { CustomerUpdateComponent } from './components/custommer/customer-update/customer-update.component';
 >>>>>>> 22fae228dbe1bcea6d61a9bf38380a1ef31330d4
 
+import { CategoryListComponent } from './pages/category-list/category-list.component';
+import { CategoryAddComponent } from './pages/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/category-edit/category-edit.component';
+
 
 
 @NgModule({
@@ -50,11 +54,18 @@ import { CustomerUpdateComponent } from './components/custommer/customer-update/
         SignupComponent,
 <<<<<<< HEAD
         ProductCartComponent,
+<<<<<<< HEAD
         ShippingComponent
 =======
         CustomerInformationComponent,
         CustomerUpdateComponent
 >>>>>>> 22fae228dbe1bcea6d61a9bf38380a1ef31330d4
+=======
+        ShippingComponent,
+        CategoryListComponent,
+        CategoryAddComponent,
+        CategoryEditComponent
+>>>>>>> 0db69f6ca0d2afdef6c86594fc5273667941b737
     ],
     imports: [
         BrowserModule,

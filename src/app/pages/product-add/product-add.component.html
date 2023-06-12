@@ -8,8 +8,15 @@
     <label for="">link ảnh</label>
     <input type="text" formControlName="img">
 
+    <label for="">Danh mục</label>
+    <select aria-label="Default select example" formControlName="category">
+       
+        <option *ngFor="let category of categories"   [value]="category._id">{{category.name}}</option>
+    </select>
+
     <label for="">mổ tả</label>
     <input type="text" formControlName="description">
+
 
     <button type="submit" >Thêm</button>
 
