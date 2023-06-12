@@ -1,0 +1,8 @@
+<form (ngSubmit)="onHandleAdd()" [formGroup]="categoryForm">
+    <label for="">tên</label>
+    <input type="text" formControlName="name">
+
+    <button type="submit" >Thêm</button>
+
+    {{categoryForm.value | json}}
+</form>

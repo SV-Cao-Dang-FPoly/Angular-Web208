@@ -1,0 +1,24 @@
+
+<div>
+    QUẢN LÝ DANH MỤC
+   </div>
+   <button type="submit" routerLink="add">Thêm mới</button>
+   <table >
+       <thead>
+         <tr>
+           <th >#</th>
+           <th >Tên Danh mục</th>
+           <th >Chức năng</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let category of categories; index as i">
+           <th >{{ i + 1 }}</th>
+           <td>{{ category.name }}</td>
+           <td>
+             <button  (click)="removeItem(category._id)!">Xóa</button>
+             <button  routerLink="{{ category._id }}/edit" >Sửa</button>
+         </td>
+         </tr>
+       </tbody>
+     </table>
