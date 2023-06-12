@@ -1,23 +1,54 @@
 <div class="container">
     <header>
-        <div class="logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Customers</a></li>
-                <li><a href="#">Settings</a></li>
-            </ul>
-        </nav>
-        <div class="right">
-            <a href="#">Logout</a>
-        </div>
+      <div class="logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Orders</a></li>
+          <li><a href="admin/customer">Customers</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+      <div class="right">
+        <a href="#">Logout</a>
+      </div>
     </header>
-
-
-    <main>
+    
+    
+      <main>
         <router-outlet />
-    </main>
-</div>
+      </main>
+  </div>
+  
+    
+  <nav class="sidebar">
+    <h1>menu</h1>
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="#">Trang chủ
+          <i class="fa-solid fa-house-chimney"></i>
+        </a>
+        
+      </li>
+      <li class="menu-item dropdown">
+        <a href="admin/product" class="dropdown-toggle">sản phẩm
+          <i class="fa-solid fa-box"></i>
+        </a>
+        
+        <ul class="submenu">
+          <li class="submenu-item">
+            <a href="/admin/product/add">Thêm sản phẩm</a>
+            
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="#">Liên hệ
+          <i class="fa-solid fa-phone"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  
