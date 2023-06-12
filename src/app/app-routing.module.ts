@@ -16,6 +16,9 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { ProductCartComponent } from './pages/product-cart/product-cart.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
+import { CategoryListComponent } from './pages/category-list/category-list.component';
+import { CategoryAddComponent } from './pages/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/category-edit/category-edit.component';
 
 const routes: Routes = [
     {
@@ -35,6 +38,9 @@ const routes: Routes = [
             { path: "product", component: ProductListComponent },
             { path: "product/add", component: ProductAddComponent },
             { path: "product/:id/update", component: ProductUpdateComponent },
+            { path: "category", component: CategoryListComponent },
+            { path: "category/add", component: CategoryAddComponent },
+            { path: "category/:id/edit", component: CategoryEditComponent },
         ]
     },
     {

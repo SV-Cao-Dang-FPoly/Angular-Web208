@@ -4,6 +4,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { IProduct } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
+import { ICategory } from 'src/app/interfaces/Category';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-product-update',
@@ -11,19 +13,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-update.component.scss']
 })
 export class ProductUpdateComponent {
+  categories: ICategory[] = [];
   product!: IProduct;
   productForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     price: [0],
     img: ['', [Validators.required]],
     description: ['', [Validators.required]],
+    category: ['', [Validators.required]],
   })
 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private categoryService: CategoryService
+    ) {
       
     this.route.paramMap.subscribe(param => {
       const id = this.route.snapshot.params['id'];
@@ -35,8 +41,17 @@ export class ProductUpdateComponent {
           price: this.product.price,
           img : this.product.img,
           description : this.product.description,
-        })
-      }, error => console.log(error.message))
+          category: (this.product.categoryId as any)?._id,
+        });
+      }, error => console.log(error.message));
+      this.categoryService.getCategorys().subscribe(
+        (data) => {
+          this.categories = data;
+        },
+        (error) => {
+          console.log(error.message);
+        }
+      );
     })
   }
   onHandleUpdate() {

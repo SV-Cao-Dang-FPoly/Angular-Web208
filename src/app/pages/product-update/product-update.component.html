@@ -7,6 +7,12 @@
 
     <input type="text" placeholder="link anh" formControlName="img" class="form-control">
 
+    <select formControlName="category">
+      <option *ngFor="let category of categories"   [value]="category._id">{{category.name}}</option>
+     
+      
+    </select>
+
     <input type="text" placeholder="mo ta" formControlName="description" class="form-control">
 
   </div>

@@ -23,6 +23,10 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ProductCartComponent } from './pages/product-cart/product-cart.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 
+import { CategoryListComponent } from './pages/category-list/category-list.component';
+import { CategoryAddComponent } from './pages/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/category-edit/category-edit.component';
+
 
 
 @NgModule({
@@ -44,7 +48,10 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
         SigninComponent,
         SignupComponent,
         ProductCartComponent,
-        ShippingComponent
+        ShippingComponent,
+        CategoryListComponent,
+        CategoryAddComponent,
+        CategoryEditComponent
     ],
     imports: [
         BrowserModule,
