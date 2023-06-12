@@ -17,7 +17,6 @@
                 <th>Giá</th>
                 <th>Ảnh</th>
                 <th>Mô tả</th>
-<<<<<<< HEAD
                 <th>
                     <button><a routerLink="add">thêm sản phẩm</a></button>
 
@@ -29,9 +28,7 @@
                       </div>
 
                 </th>
-=======
                 <th>Sửa/Xóa</th>
->>>>>>> 22fae228dbe1bcea6d61a9bf38380a1ef31330d4
             </tr>
         </thead>
 
@@ -62,16 +59,9 @@
                 <td><img [src]="product.img" /></td>
                 <td>{{product.description}}</td>
                 <td>
-<<<<<<< HEAD
-                  <button class="btn btn-danger" (click)="removeItem(product._id)!">Xóa</button>
-                  <button class="btn btn-danger" routerLink="{{ product._id }}/update">Sửa</button>
-=======
-                    <button class="edit-button" (click)="removeItem(product.id)">Xóa</button>
-                    <button class="delete-button ">
-                        <a 
-                            routerLink="{{product.id}}/update">Sửa</a>
-                    </button>
->>>>>>> 22fae228dbe1bcea6d61a9bf38380a1ef31330d4
+                  <button class="delete-button " (click)="removeItem(product._id)!">Xóa</button>
+                  <button class="edit-button" routerLink="{{ product._id }}/update">Sửa</button>
+                    
                 </td>
               </tr>
             </tbody>

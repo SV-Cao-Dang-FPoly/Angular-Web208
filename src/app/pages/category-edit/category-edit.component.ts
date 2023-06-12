@@ -12,7 +12,8 @@ import { CategoryService } from 'src/app/services/category.service';
 export class CategoryEditComponent {
   categories!: ICategory;
   categoryForm = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.minLength(2)]]
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    img: ['', [Validators.required]]
   })
 
   constructor(
@@ -27,7 +28,8 @@ export class CategoryEditComponent {
         this.categories = category;
         // set giá trị từ API vào input form
         this.categoryForm.patchValue({
-          name:this.categories.name
+          name:this.categories.name,
+          img:this.categories.img
         })
       }, error => console.log(error.message))
     })
@@ -37,7 +39,8 @@ export class CategoryEditComponent {
     if (this.categoryForm.valid) {
       const newProduct: ICategory = {
         _id: this.categories._id,
-        name: this.categoryForm.value.name || ""
+        name: this.categoryForm.value.name || "",
+        img: this.categoryForm.value.img || ""
       }
       console.log(newProduct);
       
